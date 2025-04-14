@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+
+.gridDiv {
+    box-sizing: border-box;
+    padding: 10px 10px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid red;
+}
