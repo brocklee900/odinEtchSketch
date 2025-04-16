@@ -14,11 +14,7 @@
     box-sizing: border-box;
     height: 100px;
     width: 100px;
-    border: 1px solid red;
-  }
-  
-  .hover {
-    background-color: red;
+    opacity: 0;
   }
   
   #resize {

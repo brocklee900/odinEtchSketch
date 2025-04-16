@@ -3,7 +3,6 @@ let container = document.querySelector('.container');
 function createGrid(numSquares) {
     squareSideLength = parseInt(getComputedStyle(container).width) / numSquares;
     squareSideLength = `${squareSideLength}px`;
-    console.log(squareSideLength);
 
     for (i = 0; i < numSquares; i++) {
         for (j = 0; j < numSquares; j++) {
@@ -16,17 +15,22 @@ function createGrid(numSquares) {
     }
 }
 
+function getRandomRGB() {
+    r = Math.floor(Math.random()*256);
+    g = Math.floor(Math.random()*256);
+    b = Math.floor(Math.random()*256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 container.addEventListener('mouseover', e => {
     target = e.target;
     if (target.className != 'container') {
-        target.classList.toggle('hover');
-    }
-});
-
-container.addEventListener('mouseout', e => {
-    target = e.target;
-    if (target.className != 'container') {
-        target.classList.toggle('hover');
+        color = getRandomRGB();
+        target.style.backgroundColor = color;
+        if (target.style.opacity < 1) {
+            target.style.opacity = Number(target.style.opacity) + .1;
+        }
+        
     }
 });
 
@@ -45,7 +49,7 @@ resize.addEventListener('click', () => {
     }
 
     numSquares = +prompt(
-        'Enter the dimensions. (The resulting grid will be inputxinput)'
+        'Enter the dimensions. (The resulting grid will be inputxinput)\n(Input must be 100 or less)'
     );
     createGrid(numSquares);
 });
