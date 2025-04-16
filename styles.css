@@ -1,18 +1,26 @@
+
 .container {
     display: flex;
+    flex: 0 0 auto;
     flex-direction: row;
     flex-wrap: wrap;
+    align-content:flex-start;
+    height: 400px;
+    width: 400px;
     border: 1px solid black;
-}
-
-.gridDiv {
+  }
+  
+  .gridDiv {
     box-sizing: border-box;
-    padding: 10px 10px;
     height: 100px;
     width: 100px;
     border: 1px solid red;
-}
-
-.hover {
+  }
+  
+  .hover {
     background-color: red;
-}
+  }
+  
+  #resize {
+    margin: 10px 10px;
+  }
